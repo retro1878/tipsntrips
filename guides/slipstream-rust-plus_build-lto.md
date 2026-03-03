@@ -145,6 +145,7 @@ ls -lh target/release/slipstream-server target/release/slipstream-client
 If you previously ran the deploy script to set up the systemd service and config, just replace the binary and restart:
 
 ```bash
+sudo systemctl stop slipstream-rust-server
 sudo cp target/release/slipstream-server /usr/local/bin/slipstream-server
 sudo systemctl restart slipstream-rust-server
 sudo systemctl status slipstream-rust-server
@@ -161,8 +162,10 @@ bash <(curl -Ls https://raw.githubusercontent.com/Fox-Fig/slipstream-rust-plus-d
 Then overwrite the downloaded prebuilt binary with your LTO build:
 
 ```bash
+sudo systemctl stop slipstream-rust-server
 sudo cp target/release/slipstream-server /usr/local/bin/slipstream-server
 sudo systemctl restart slipstream-rust-server
+sudo systemctl status slipstream-rust-server
 ```
 
 ---
